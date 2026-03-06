@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800;900&display=swap" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- THIS LINE IS MUST -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="top-nav">
+  <a href="index.html">Home</a>
+  <a href="memories.html">Memories</a>
+  <a href="dua.html">Dua</a>
+  <a href="love-az.html" class="teddy-box">
+  <a href="love-az.html">
+  <img src="images/teddy.png" class="teddy-corner" alt="Teddy">
+</a>
+</nav>
+
+<section id="home" class="cover">
+
+    <!-- Floating Balloons -->
+<div class="center-area">
+
+ <div class="balloons side">
+  <div class="balloon pink"></div>
+  <div class="balloon lavender"></div>
+</div>
+
+
+  <!-- Center Text -->
+  <div class="center-text">
+    Happy Birthday Mere bhai <span class="heart">💗</span>
+  </div>
+
+
+
+  <!-- Falling hearts -->
+  <div class="petals"></div>
+
+</div>
+  </section>
+<div class="running-wrapper">
+  <div class="running-text">
+    May Allah always protect you, guide your steps, grant peace to your heart, and fill your life with endless barakah <span class="heart">🤍</span>
+  </div>
+</div>
+</section>
+<script>
+const petalsBox = document.querySelector('.petals');
+let count = 0;
+
+const petalInterval = setInterval(() => {
+  if(count >= 25){
+    clearInterval(petalInterval);
+    return;
+  }
+
+  const petal = document.createElement('div');
+  petal.className = 'petal';
+  petal.innerHTML = '💗';
+
+  petal.style.left = Math.random() * 100 + 'vw';
+  petal.style.animationDuration = (5 + Math.random() * 4) + 's';
+
+  petalsBox.appendChild(petal);
+  count++;
+
+  setTimeout(() => petal.remove(), 12000);
+}, 400);
+</script>
+
+
+</body>
+</html>
